@@ -1,0 +1,8 @@
+
+
+
+CREATE DATABASE auth_crm;
+CREATE USER 'crm'@'localhost' IDENTIFIED BY 'abc123';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, INDEX, DROP, ALTER, CREATE TEMPORARY TABLES, LOCK TABLES ON auth_crm.* TO 'crm'@'localhost';
+GRANT FILE ON *.* TO 'crm'@'localhost';
+USE auth_crm;
