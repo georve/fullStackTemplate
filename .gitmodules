@@ -1,3 +1,6 @@
 [submodule "crm-api"]
-        path = learn
-        url =  https://github.com/georve/crm-api.git
+	path = crm-api
+	url = https://github.com/georve/crm-api.git
+[submodule "crm-app"]
+	path = crm-app
+	url = https://github.com/georve/crm-app.git
