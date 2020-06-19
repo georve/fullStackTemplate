@@ -1,8 +1,17 @@
 version: '3.0'
 
 services:
+  app:
+    build: crm-app/.
+    container_name: crm_app
+    ports:
+      - 8080:80
+    volumes:
+      - .:/app
+    restart: always
+
   api:
-    build: .
+    build: crm-api/.
     container_name: crm_api
     ports:
       - 3001:3000
@@ -15,7 +24,7 @@ services:
       - mysql_db
 
   mysql_db:
-    image: mysql:5.7.24
+    build: database/.
     container_name: mysql_crm
     ports:
       - 3306:3306
@@ -23,7 +32,7 @@ services:
       - db-data:/var/lib/mysql
     command: --character-set-server=utf8
     restart: always
-    env_file: .env
+    env_file: database/.env
 
 volumes:
   db-data:
